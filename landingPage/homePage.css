@@ -40,177 +40,92 @@ p{
 
 
 /* header:navbar */
-
-header{
-    background-color: rgb(249, 249, 225);
-    height: 80px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 100;
-}
-
-header nav img{
-    margin-top: 12px;
-    width: 135px;
-}
-
-header li{
-    margin: 0 34px;
-    font-size: 24px;
-    display: flex;
-    font-weight: 500;
-    letter-spacing: 0.13em;
-}
-
-header .nav-item{
-    position: relative;
-    display: inline-block;
-    line-height: 1.5em;
-    height: 35px;
-}
-  
-header .nav-item::after{
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 100%;
-    height: 2px;
-    background-color: rgb(27, 27, 27);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease-in-out;
-  }
-  
-header .nav-item:hover::after {
-    transform: scaleX(1);
-}
-
-header ul{
-    margin-top: 12px;
-    margin-left: 150px;
-}
-
-header #navbtn{
-    border: 2px solid rgb(27, 27, 27);
-    margin-left: 150px;
-    background-color: rgb(27, 27, 27);
-    color: beige;
-    font-size: 18px;
-    letter-spacing: 0.1em;
-    padding: 6px 20px 8px 20px;
-    height: 40px;
-    margin-top: 2px;
-    font-weight: 300;
-    transition: all 0.3s ease-in-out;
-}
-
-#navbtn:hover {
-    background-color: transparent;
-    color: rgb(27, 27, 27);
-    border: 2px solid rgb(27, 27, 27);
-    box-shadow: 0px 3px 0px rgb(27, 27, 27);
-  }
-
-/* 循環跑馬燈 */
-.promo-lines {
-  position: relative;
-  top: -200px;
-  min-height: 0px;
-  z-index: 15;
-}
-
-.line-text {
-  font-size: 23px;
-  text-align: center;
-  color: #FFFB00;
-  text-transform: uppercase;
-  white-space: nowrap;
-  animation: animate-first-screen 35s -30s linear infinite;
-  will-change: transform;
+header {
+  background-color: rgb(249, 249, 225);
+  height: 80px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
   display: flex;
   align-items: center;
 }
 
-.line-text:nth-child(2) {
-  animation: animate-second-screen 35s -16s linear infinite;
+header nav {
+  width: 100%;
 }
 
-.line {
-  position: absolute;
+header nav img {
+  margin-top: 12px;
+  width: 135px;
+}
+
+header ul {
+  margin-top: 12px;
+  margin-left: auto;
   display: flex;
-  width: 1650px;
-  overflow: hidden;
+  align-items: center;
 }
 
-.line-red {
-  background: #FF87FD;
-  height: 55px;
-  line-height: 20px;
-  z-index: 2;
-  transform: rotate(4deg) translate(-200px, 100px);
-  top: 65px;
+header li {
+  margin: 0 34px;
+  font-size: 24px;
+  display: flex;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  align-items: center;
 }
 
-.line-red .line-text {
-  background: #FF87FD;
+header .nav-item {
+  position: relative;
+  display: inline-block;
+  line-height: 1.5em;
+  height: 35px;
 }
 
-.line-violet {
-  background: #A0AAFF;
-  height: 50px;
-  line-height: 20px;
-  z-index: 1;
-  transform: rotate(-2deg) translate(-200px, 100px);
-  top: 55px;
+header .nav-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(27, 27, 27);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
 }
 
-.line-violet .line-text {
-  background: #A0AAFF;
+header .nav-item:hover::after {
+  transform: scaleX(1);
 }
 
-@keyframes animate-first-screen {
-  0% {
-      transform: translateX(100%);
-  }
-  100% {
-      transform: translateX(-100%);
-  }
+header #navbtn {
+  border: 2px solid rgb(27, 27, 27);
+  background-color: rgb(27, 27, 27);
+  color: beige;
+  font-size: 18px;
+  padding: 4px 16px 0px 16px;
+  letter-spacing: 0.1em;
+  height: 40px;
+  font-weight: 300;
+  transition: all 0.3s ease-in-out;
 }
 
-@keyframes animate-second-screen {
-  0% {
-      transform: translateX(0);
-  }
-  100% {
-      transform: translateX(-200%);
-  }
+header #navbtn:hover {
+  background-color: transparent;
+  color: rgb(27, 27, 27);
+  border: 2px solid rgb(27, 27, 27);
+  box-shadow: 0px 3px 0px rgb(27, 27, 27);
 }
 
-@media (max-width: 769px){
-    .promo-lines {
-      min-height: 195px;
-  }
-  .line-red {
-      top: -73px;
-      height: 95px;
-  }
-  .line-violet {
-      top: -115px;
-      height: 95px;
-  }
-  .line-text {
-      font-size: 40px;
-      line-height: 76px;
-  }
-}
+
 
  /* 【引言頁面】 */
 
 #intro {
     text-align: center;
-    height: 850px;
+    height: 100%;
     width: 100%;
     background-image: url(../img/intro_bgi.jpg);
     background-repeat: no-repeat;
@@ -279,7 +194,7 @@ header #navbtn{
  /* 【自我介紹頁面】 */
 
  #introduction {
-    height: 810px;
+    height: 100%;
     background-color: #3EA256;
     z-index: 0;
  }
@@ -292,7 +207,7 @@ header #navbtn{
  #introduction #title{
     font-weight: 800;
     margin: 0;
-    padding-top: 120px;
+    padding-top: 45px;
     padding-bottom: 20px;
     color: beige;
  }
@@ -301,6 +216,7 @@ header #navbtn{
     height: 500px;
     background-color: beige;
     border-radius: 25px;
+    margin-bottom: 65px;
  }
 
  .custom-width {
@@ -392,8 +308,8 @@ header #navbtn{
 /* 連結至Instagram */
 .instagram {
   width: 100%;
-  height: 126%;
   background-color: rgb(255, 255, 238);
+  padding-bottom: 5%;
 }
 
 .instagram img{
